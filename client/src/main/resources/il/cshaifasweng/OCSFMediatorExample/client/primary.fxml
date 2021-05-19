@@ -2,15 +2,27 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.PrimaryController">
-   <children>
-      <Label text="Welcome" />
-      <Button mnemonicParsing="false" onAction="#sendWarning" text="Send me a warning!" />
-   </children>
+<VBox alignment="CENTER" prefHeight="565.0" prefWidth="793.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.PrimaryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
+   <children>
+      <AnchorPane cacheShape="false" centerShape="false" prefHeight="556.0" prefWidth="779.0">
+         <children>
+            <Button layoutX="15.0" layoutY="164.0" mnemonicParsing="false" onAction="#gotoLogin" text="Update movie list" />
+            <Button layoutX="13.0" layoutY="126.0" mnemonicParsing="false" onAction="#gotoFiling_complaint" text="Filing a complaint" />
+            <Button layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#gotobrowse_movies" text="Browse movie list" />
+            <ImageView fitHeight="359.0" fitWidth="607.0" layoutX="125.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Users/win10/Downloads/welcome%20to%20Cel%20cienema.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
 </VBox>
