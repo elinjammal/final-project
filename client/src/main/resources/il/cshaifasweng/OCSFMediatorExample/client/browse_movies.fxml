@@ -1,69 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="525.0" prefWidth="658.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16">
+<AnchorPane prefHeight="516.0" prefWidth="643.0" style="-fx-background-color: #730606;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.browse_moviesController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" />
-      <AnchorPane layoutX="7.0" layoutY="4.0" prefHeight="519.0" prefWidth="644.0">
+      <AnchorPane layoutX="7.0" layoutY="4.0" prefHeight="527.0" prefWidth="643.0" style="-fx-background-color: #730606;">
          <children>
-            <MenuButton layoutX="38.0" layoutY="40.0" mnemonicParsing="false" text="Filter by movie">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </MenuButton>
-            <MenuButton layoutX="174.0" layoutY="40.0" mnemonicParsing="false" text="Filter by hour">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </MenuButton>
-            <MenuButton layoutX="306.0" layoutY="40.0" mnemonicParsing="false" text="Filter by branch">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </MenuButton>
-            <Button layoutX="449.0" layoutY="40.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="screen" />
-            <TableView layoutX="74.0" layoutY="101.0" prefHeight="349.0" prefWidth="340.0">
+            <TableView layoutX="-9.0" layoutY="82.0" prefHeight="445.0" prefWidth="583.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Movie name" />
-                <TableColumn prefWidth="70.0" text="Branch" />
-                  <TableColumn prefWidth="75.0" text="Screen time" />
-                  <TableColumn prefWidth="116.0" text="More info" />
+                <TableColumn prefWidth="75.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Movie name" />
+                <TableColumn prefWidth="70.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Branch" />
+                  <TableColumn prefWidth="75.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Screen time" />
+                  <TableColumn prefWidth="362.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="More info" />
               </columns>
             </TableView>
-            <BottomNavigationButton layoutX="512.0" layoutY="425.0" onAction="#gotoprimary" prefHeight="25.0" prefWidth="110.0" text="Go back" />
-            <Accordion layoutX="298.0" layoutY="128.0" prefHeight="114.0" prefWidth="115.0">
+            <Accordion layoutX="223.0" layoutY="107.0" prefHeight="244.0" prefWidth="352.0" style="-fx-background-color: #f8e9bb; -fx-background-radius: 40;">
               <panes>
-                <TitledPane animated="false" text="untitled 2">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="53.0" prefWidth="161.0" />
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" prefHeight="64.0" prefWidth="125.0" text="untitled 3">
+                <TitledPane animated="false" prefHeight="136.0" prefWidth="244.0" text="untitled 1">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="untitled 1">
+                <TitledPane animated="false" text="untitled 2">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="491.0">
+                           <children>
+                              <ImageView fitHeight="179.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@movies%20pics/Aladdin_poster_1992.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" prefHeight="64.0" prefWidth="125.0" style="-fx-background-color: #f8e9bb; -fx-animated: 2.0;" text="untitled 3">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
                 </TitledPane>
               </panes>
             </Accordion>
+            <Button fx:id="Go_back" layoutX="575.0" layoutY="480.0" mnemonicParsing="false" onAction="#gobacktoprimary" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Go_back" />
+            <ImageView fitHeight="37.0" fitWidth="130.0" layoutX="253.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" scaleX="5.0" scaleY="2.5">
+               <image>
+                  <Image url="@movie-banners-vector-illustration-46569846.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
