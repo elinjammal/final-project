@@ -20,6 +20,8 @@ public class browse_moviesController {
 
 	@FXML // fx:id="Go_back"
 	private Button Go_back; // Value injected by FXMLLoader
+	@FXML // fx:id="Show_screening_time"
+	private Button Show_screening_time; // Value injected by FXMLLoader
 
 	@FXML
 	void gobacktoprimary(ActionEvent event) throws IOException {
@@ -32,6 +34,21 @@ public class browse_moviesController {
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("List of movies");
+		primaryStage.show();
+
+	}
+
+	@FXML
+	void gotoShow_screening_time(ActionEvent event) throws IOException {
+		Window window = ((Node) (event.getSource())).getScene().getWindow();
+		if (window instanceof Stage) {
+			((Stage) window).close();
+		}
+		Stage primaryStage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getResource("Screening_Times.fxml"));
+		Scene scene = new Scene(root);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("Screening_Times");
 		primaryStage.show();
 
 	}

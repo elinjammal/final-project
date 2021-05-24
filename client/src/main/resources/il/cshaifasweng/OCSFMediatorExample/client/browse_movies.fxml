@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,46 +13,20 @@
       <VBox prefHeight="200.0" prefWidth="100.0" />
       <AnchorPane layoutX="7.0" layoutY="4.0" prefHeight="527.0" prefWidth="643.0" style="-fx-background-color: #730606;">
          <children>
-            <TableView layoutX="-9.0" layoutY="82.0" prefHeight="445.0" prefWidth="583.0">
+            <TableView layoutX="-9.0" layoutY="82.0" prefHeight="445.0" prefWidth="541.0">
               <columns>
-                <TableColumn prefWidth="75.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Movie name" />
-                <TableColumn prefWidth="70.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Branch" />
-                  <TableColumn prefWidth="75.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Screen time" />
-                  <TableColumn prefWidth="362.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="More info" />
+                <TableColumn prefWidth="174.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Movie name" />
+                  <TableColumn prefWidth="120.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Price" />
+                  <TableColumn prefWidth="246.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Image" />
               </columns>
             </TableView>
-            <Accordion layoutX="223.0" layoutY="107.0" prefHeight="244.0" prefWidth="352.0" style="-fx-background-color: #f8e9bb; -fx-background-radius: 40;">
-              <panes>
-                <TitledPane animated="false" prefHeight="136.0" prefWidth="244.0" text="untitled 1">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" text="untitled 2">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="491.0">
-                           <children>
-                              <ImageView fitHeight="179.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@movies%20pics/Aladdin_poster_1992.jpg" />
-                                 </image>
-                              </ImageView>
-                           </children></AnchorPane>
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" prefHeight="64.0" prefWidth="125.0" style="-fx-background-color: #f8e9bb; -fx-animated: 2.0;" text="untitled 3">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </TitledPane>
-              </panes>
-            </Accordion>
-            <Button fx:id="Go_back" layoutX="575.0" layoutY="480.0" mnemonicParsing="false" onAction="#gobacktoprimary" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Go_back" />
+            <Button fx:id="Go_back" layoutX="542.0" layoutY="477.0" mnemonicParsing="false" onAction="#gobacktoprimary" prefHeight="28.0" prefWidth="92.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Go_back" />
             <ImageView fitHeight="37.0" fitWidth="130.0" layoutX="253.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" scaleX="5.0" scaleY="2.5">
                <image>
                   <Image url="@movie-banners-vector-illustration-46569846.jpg" />
                </image>
             </ImageView>
+            <Button fx:id="Show_screening_time" layoutX="534.0" layoutY="386.0" mnemonicParsing="false" onAction="#gotoShow_screening_time" prefHeight="61.0" prefWidth="106.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Show_screening_time" wrapText="true" />
          </children>
       </AnchorPane>
    </children>

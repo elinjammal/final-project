@@ -16,110 +16,57 @@
             <Image url="@lede-disney-1300x1084.jpg" />
          </image>
       </ImageView>
-      <VBox layoutX="77.0" layoutY="106.0" prefHeight="352.0" prefWidth="545.0" style="-fx-background-color: #7ac1ff;" />
+      <VBox layoutX="154.0" layoutY="106.0" prefHeight="352.0" prefWidth="390.0" style="-fx-background-color: #7ac1ff;" />
       <Label fx:id="invalidDelete_label" layoutX="182.0" layoutY="407.0" textFill="RED" />
-      <TextField fx:id="actors_box" layoutX="186.0" layoutY="274.0" prefHeight="25.0" prefWidth="145.0" />
-      <TextField fx:id="englishName_box" layoutX="186.0" layoutY="113.0" prefHeight="25.0" prefWidth="145.0" />
-      <TextField fx:id="producer_box" layoutX="186.0" layoutY="242.0" prefHeight="25.0" prefWidth="145.0" />
-      <TextField fx:id="hebrewName_box" layoutX="186.0" layoutY="146.0" prefHeight="25.0" prefWidth="145.0" />
-      <TextField fx:id="length_box" layoutX="186.0" layoutY="179.0" prefHeight="25.0" prefWidth="145.0" />
-      <TextField fx:id="price_box" layoutX="186.0" layoutY="211.0" prefHeight="25.0" prefWidth="145.0" />
-      <Label layoutX="85.0" layoutY="116.0" text="Name in english">
+      <TextField fx:id="newTime_box" layoutX="307.0" layoutY="336.0" prefHeight="25.0" prefWidth="145.0" />
+      <TextField fx:id="oldTime_box" layoutX="307.0" layoutY="304.0" prefHeight="25.0" prefWidth="145.0" />
+      <Label layoutX="185.0" layoutY="308.0" text="Old screening time">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="84.0" layoutY="149.0" text="Name in hebrew">
+      <Label layoutX="185.0" layoutY="340.0" text="New screening time">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="110.0" layoutY="182.0" text="Length">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="115.0" layoutY="214.0" text="Price">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="79.0" layoutY="245.0" text="Name of producer">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="114.0" layoutY="277.0" text="Actors">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="117.0" layoutY="310.0" text="Image">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="image_box" layoutX="186.0" layoutY="307.0" prefHeight="25.0" prefWidth="145.0" />
-      <Button fx:id="Add_Movie" layoutX="215.0" layoutY="340.0" mnemonicParsing="false" onAction="#Add_movie" style="-fx-background-color: #3c3c3c;" text="Add_Movie" textFill="WHITE">
+      <Button fx:id="Update_Screening_Time" layoutX="307.0" layoutY="376.0" mnemonicParsing="false" onAction="#Add_Screening_Time" style="-fx-background-color: #3c3c3c;" text="Update_Screening_Time" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="updateMovieName_box" layoutX="467.0" layoutY="114.0" prefHeight="25.0" prefWidth="145.0" />
-      <TextField fx:id="deleteMovieName_box" layoutX="186.0" layoutY="381.0" />
-      <Label layoutX="104.0" layoutY="384.0" text="Movie name">
+      <TextField fx:id="newTime_box1" layoutX="307.0" layoutY="118.0" prefHeight="25.0" prefWidth="145.0" />
+      <TextField fx:id="oldTime_box1" layoutX="307.0" layoutY="218.0" prefHeight="25.0" prefWidth="145.0" />
+      <Label layoutX="193.0" layoutY="222.0" text="Screening time">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="Delete_Movie" layoutX="202.0" layoutY="427.0" mnemonicParsing="false" onAction="#Delete_movie" style="-fx-background-color: #3c3c3c;" text="Delete_Movie" textFill="WHITE">
+      <Label layoutX="185.0" layoutY="122.0" text="New screening time">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="Add_Screening_Time" layoutX="307.0" layoutY="158.0" mnemonicParsing="false" onAction="#Add_Screening_Time" style="-fx-background-color: #3c3c3c;" text="Add_Screening_Time" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="newTime_box" layoutX="468.0" layoutY="177.0" prefHeight="25.0" prefWidth="145.0" />
-      <TextField fx:id="oldTime_box" layoutX="468.0" layoutY="145.0" prefHeight="25.0" prefWidth="145.0" />
-      <Label layoutX="384.0" layoutY="118.0" text="Movie name">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="355.0" layoutY="149.0" text="Old screening time">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="353.0" layoutY="181.0" text="New screening time">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Button fx:id="Update_Screening_Time" layoutX="464.0" layoutY="217.0" mnemonicParsing="false" onAction="#Update_screening_time" style="-fx-background-color: #3c3c3c;" text="Update_Screening_Time" textFill="WHITE">
+      <Button fx:id="Delete_Screening_Time" layoutX="307.0" layoutY="259.0" mnemonicParsing="false" onAction="#Add_Screening_Time" style="-fx-background-color: #3c3c3c;" text="Delete_Screening_Time" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="newPrice_box" layoutX="468.0" layoutY="312.0" prefHeight="25.0" prefWidth="145.0" />
-      <TextField fx:id="updateMoviePrice_box" layoutX="468.0" layoutY="280.0" prefHeight="25.0" prefWidth="145.0" />
-      <Label layoutX="386.0" layoutY="284.0" text="Movie name">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="392.0" layoutY="316.0" text="New price">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Button fx:id="Update_Price" layoutX="494.0" layoutY="350.0" mnemonicParsing="false" onAction="#update_price" style="-fx-background-color: #3c3c3c;" text="Update_Price" textFill="WHITE">
+      <Button fx:id="back_to_home" layoutX="439.0" layoutY="427.0" mnemonicParsing="false" onAction="#back_to_home" style="-fx-background-color: #3c3c3c;" text="back_to_home" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="Back_To_Home" layoutX="496.0" layoutY="415.0" mnemonicParsing="false" onAction="#backtohome" prefWidth="104.0" style="-fx-background-color: #3c3c3c;" text="Back_To_Home" textFill="WHITE">
+      <TextField fx:id="movie_name" layoutX="163.0" layoutY="424.0" prefHeight="25.0" prefWidth="145.0" />
+      <Label layoutX="163.0" layoutY="402.0" text="Enter movie name:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
-      </Button>
+      </Label>
    </children>
 </AnchorPane>

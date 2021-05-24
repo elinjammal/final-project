@@ -2,9 +2,9 @@
 
 package il.cshaifasweng.OCSFMediatorExample.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,10 +14,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "My_MovieTimes")
-public class MovieTimes {
+public class MovieTimes implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "My_MovieTimes_id")
+	// @Column(name = "My_MovieTimes_id")
 
 	private int id;
 	@ElementCollection

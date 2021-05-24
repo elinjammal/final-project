@@ -1,9 +1,15 @@
+/**
+ * Sample Skeleton for 'Update_movielist.fxml' Controller Class
+ */
+
 package il.cshaifasweng.OCSFMediatorExample.client;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 
-//import java.awt.event.ActionEvent;
-import javafx.event.ActionEvent;
+import il.cshaifasweng.OCSFMediatorExample.entities.Movie;
+import il.cshaifasweng.OCSFMediatorExample.entities.TupleObject;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,52 +21,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-/**
- * Sample Skeleton for 'Update_movielist.fxml' Controller Class
- */
-
 public class Update_movielistController {
 
 	@FXML // fx:id="invalidDelete_label"
-	private static Label invalidDelete_label; // Value injected by FXMLLoader
-
-	@FXML // fx:id="actors_box"
-	private TextField actors_box; // Value injected by FXMLLoader
-
-	@FXML // fx:id="englishName_box"
-	private TextField englishName_box; // Value injected by FXMLLoader
-
-	@FXML // fx:id="producer_box"
-	private TextField producer_box; // Value injected by FXMLLoader
-
-	@FXML // fx:id="hebrewName_box"
-	private TextField hebrewName_box; // Value injected by FXMLLoader
-
-	@FXML // fx:id="length_box"
-	private TextField length_box; // Value injected by FXMLLoader
-
-	@FXML // fx:id="price_box"
-	private TextField price_box; // Value injected by FXMLLoader
-
-	@FXML // fx:id="image_box"
-	private TextField image_box; // Value injected by FXMLLoader
-
-	@FXML // fx:id="Add_Movie"
-	private Button Add_Movie; // Value injected by FXMLLoader
-
-	@FXML // fx:id="updateMovieName_box"
-	private TextField updateMovieName_box; // Value injected by FXMLLoader
-
-	@FXML // fx:id="deleteMovieName_box"
-	private TextField deleteMovieName_box;
-//	private static TextField deleteMovieName_boxPublic; // Value injected by FXMLLoader
-
-//	public void initialize(URL url, ResourceBundle rb) {// b3rfsh esh hdol el url/rb wiza lzm n3'yrn
-//		Update_movielistController.deleteMovieName_boxPublic = updateMovieName_box;
-//	}
-
-	@FXML // fx:id="Delete_Movie"
-	private Button Delete_Movie; // Value injected by FXMLLoader
+	private Label invalidDelete_label; // Value injected by FXMLLoader
 
 	@FXML // fx:id="newTime_box"
 	private TextField newTime_box; // Value injected by FXMLLoader
@@ -71,65 +35,54 @@ public class Update_movielistController {
 	@FXML // fx:id="Update_Screening_Time"
 	private Button Update_Screening_Time; // Value injected by FXMLLoader
 
-	@FXML // fx:id="newPrice_box"
-	private TextField newPrice_box; // Value injected by FXMLLoader
+	@FXML // fx:id="newTime_box1"
+	private TextField newTime_box1; // Value injected by FXMLLoader
 
-	@FXML // fx:id="updateMoviePrice_box"
-	private TextField updateMoviePrice_box; // Value injected by FXMLLoader
+	@FXML // fx:id="oldTime_box1"
+	private TextField oldTime_box1; // Value injected by FXMLLoader
 
-	@FXML // fx:id="Update_Price"
-	private Button Update_Price; // Value injected by FXMLLoader
+	@FXML // fx:id="Add_Screening_Time"
+	private Button Add_Screening_Time; // Value injected by FXMLLoader
 
-	@FXML // fx:id="Back_To_Home"
-	private Button Back_To_Home; // Value injected by FXMLLoader
+	@FXML // fx:id="Delete_Screening_Time"
+	private Button Delete_Screening_Time; // Value injected by FXMLLoader
+
+	@FXML // fx:id="back_to_home"
+	private Button back_to_home; // Value injected by FXMLLoader
+	@FXML // fx:id="movie_name"
+	private TextField movie_name; // Value injected by FXMLLoader
 
 	@FXML
-	void Add_movie(ActionEvent event) {
-
+	void Add_Screening_Time(ActionEvent event) {
+		String movieName = movie_name.getText();
+		String new_time = newTime_box1.getText();
+		Movie movie = new Movie();
+		movie.setEngName(movieName);
+		movie.setHebName(new_time);
+		ArrayList<Movie> list = new ArrayList<Movie>();
+		list.add(movie);
+		TupleObject to = new TupleObject("Add Screening Time", list);
+		try {
+			SimpleClient.getClient().sendToServer(to);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
-	void Delete_movie(ActionEvent event) throws IOException {
-
-		SimpleClient.getClient().sendToServer("Delete movie " + deleteMovieName_box.getText());
-	}
-
-	@FXML
-	void Update_screening_time(ActionEvent event) {
-
-	}
-
-	@FXML
-	void backtohome(ActionEvent event) throws IOException {
+	void back_to_home(ActionEvent event) throws IOException {
 		Window window = ((Node) (event.getSource())).getScene().getWindow();
 		if (window instanceof Stage) {
 			((Stage) window).close();
 		}
-
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Home");
+		primaryStage.setTitle("List of movies");
 		primaryStage.show();
 
-	}
-
-	@FXML
-	void update_price(ActionEvent event) {
-
-	}
-
-	public TextField getDeleteMovieName_box() {
-		return deleteMovieName_box;
-	}
-
-	public static Label getInvalidDelete_label() {
-		return invalidDelete_label;
-	}
-
-	public void setInvalidDelete_label(Label invalidDelete_label) {
-		Update_movielistController.invalidDelete_label = invalidDelete_label;
 	}
 
 }

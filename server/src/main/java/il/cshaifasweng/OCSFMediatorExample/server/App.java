@@ -24,7 +24,7 @@ import il.cshaifasweng.OCSFMediatorExample.entities.MovieTimes;
 public class App {
 
 	private static SimpleServer server;
-	private static Session session;
+	public static Session session;
 
 	private static SessionFactory getSessionFactory() throws HibernateException {
 
@@ -37,13 +37,12 @@ public class App {
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties()).build();
 
-		SessionFactory x = configuration.buildSessionFactory(serviceRegistry);
-
-		return x;
+		return configuration.buildSessionFactory(serviceRegistry);
 	}
 
 	private static void generateData() throws Exception {
 //Aladdin
+		// byte[] AladdinImage = Files.readAllBytes(Paths.get(null));
 		List<String> AladdinActorsList = new ArrayList<String>();
 		List<String> AladdinTimes = new ArrayList<String>();
 		AladdinActorsList.add("Mena Massoud");
@@ -51,9 +50,9 @@ public class App {
 		AladdinTimes.add("18:00");
 		AladdinTimes.add("20:00");
 		MovieTimes AladdinMovieTimes = new MovieTimes(AladdinTimes);
+		session.save(AladdinMovieTimes);
 		Movie AladdinMovie = new Movie("Aladdin", AladdinActorsList, 128, "אלאדין", "insert aladdin movie summary",
 				"Jonathan Eirich", 20, AladdinMovieTimes);
-		session.save(AladdinMovieTimes);
 		session.save(AladdinMovie);
 		session.flush();
 
@@ -64,10 +63,10 @@ public class App {
 		ShrekActorsList.add("Princess Fiona");
 		ShrekTimes.add("17:30");
 		MovieTimes ShrekMovieTimes = new MovieTimes(ShrekTimes);
+		session.save(ShrekMovieTimes);
 		Movie ShrekMovie = new Movie("Shrek", ShrekActorsList, 95, "שרק", "insert shrek movie summary",
 				"John H. Williams", 35, ShrekMovieTimes);
 		session.save(ShrekMovie);
-		session.save(ShrekMovieTimes);
 		session.flush();
 //Snow White
 		List<String> SnowWhiteActorsList = new ArrayList<String>();
@@ -76,10 +75,10 @@ public class App {
 		SnowWhiteActorsList.add("Dopey");
 		SnowWhiteTimes.add("20:15");
 		MovieTimes SnowWhiteMovieTimes = new MovieTimes(SnowWhiteTimes);
+		session.save(SnowWhiteMovieTimes);
 		Movie SnowWhiteMovie = new Movie("Snow White", SnowWhiteActorsList, 88, "שלגייה",
 				"insert snow white movie summary", "Walt Disney", 4, SnowWhiteMovieTimes);
 		session.save(SnowWhiteMovie);
-		session.save(SnowWhiteMovieTimes);
 		session.flush();
 
 //Fast and Furious
@@ -90,10 +89,10 @@ public class App {
 		FnFTimes.add("19:45");
 		FnFTimes.add("21:30");
 		MovieTimes FnFMovieTimes = new MovieTimes(FnFTimes);
+		session.save(FnFMovieTimes);
 		Movie FastAndFuriousMovie = new Movie("Fast and Furious", FnFActorsList, 107, "מהיר ועצבני",
 				"insert fast and furious movie summary", "Neal H. Moritz", 45, FnFMovieTimes);
 		session.save(FastAndFuriousMovie);
-		session.save(FnFMovieTimes);
 		session.flush();
 
 //Dumbo
@@ -104,10 +103,10 @@ public class App {
 		DumboTimes.add("19:50");
 		DumboTimes.add("21:30");
 		MovieTimes DumboMovieTimes = new MovieTimes(DumboTimes);
+		session.save(DumboMovieTimes);
 		Movie DumboMovie = new Movie("Dumbo", DumboActorsList, 112, "דמבו", "insert dumbo movie summary", "Tim Burton ",
 				25, DumboMovieTimes);
 		session.save(DumboMovie);
-		session.save(DumboMovieTimes);
 		session.flush();
 
 	}
@@ -149,12 +148,10 @@ public class App {
 
 	public static void main(String[] args) throws IOException {
 		server = new SimpleServer(3000);
-		server.listen();
 		try {
 			SessionFactory sessionFactory = getSessionFactory();
 
 			session = sessionFactory.openSession();
-
 			session.beginTransaction();
 
 			generateData();
@@ -172,9 +169,9 @@ public class App {
 			exception.printStackTrace();
 		} finally {
 			if (session != null) {
-				session.close();
-
+//				session.close();
 			}
 		}
+		server.listen();
 	}
 }

@@ -14,8 +14,8 @@
 	<packaging>jar</packaging>
 
 	<name>server</name>
-	<!-- FIXME change it to the project's website -->
-	<url>http://www.example.com</url>
+	<!-- FIXME change it to the project's website -->	
+	<url>http://www.newDB.com</url>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

@@ -1,7 +1,10 @@
 package il.cshaifasweng.OCSFMediatorExample.client;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import il.cshaifasweng.OCSFMediatorExample.entities.Movie;
+import il.cshaifasweng.OCSFMediatorExample.entities.TupleObject;
 //import java.awt.event.ActionEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -68,7 +71,9 @@ public class PrimaryController {
 		if (window instanceof Stage) {
 			((Stage) window).close();
 		}
-		SimpleClient.getClient().sendToServer("Browse movies");
+		ArrayList<Movie> movie = new ArrayList<Movie>();
+		TupleObject msg = new TupleObject("Browse movies", movie);
+		SimpleClient.getClient().sendToServer(msg);
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("browse_movies.fxml"));
 		Scene scene = new Scene(root);

@@ -1,8 +1,13 @@
 package il.cshaifasweng.OCSFMediatorExample.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TupleObject {
+public class TupleObject implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String msg;
 	ArrayList<Movie> movies;
 

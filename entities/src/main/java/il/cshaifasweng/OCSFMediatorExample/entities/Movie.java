@@ -2,6 +2,7 @@
 
 package il.cshaifasweng.OCSFMediatorExample.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -10,15 +11,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "my_movies")
-public class Movie {
+@Table(name = "movies")
+public class Movie implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "My_Movies_id")
+	// @Column(name = "My_Movies_id")
 	private int id;
 	private String EngName;
 	private String HebName;
@@ -31,7 +37,10 @@ public class Movie {
 	private String Producer;
 	private int Price;
 	@OneToOne()
+	@JoinColumn(name = "MovieTimes_id")
 	private MovieTimes Times;
+
+	private byte[] image;
 
 	public Movie() {
 
@@ -122,12 +131,21 @@ public class Movie {
 	}
 
 	public boolean updateMovieTimes(String new_time, String old_time) {
-		if (this.Times.getTimes().contains(old_time)) {
+		if (old_time == null) {
 			this.Times.getTimes().remove(old_time);
-			this.Times.getTimes().add(new_time);
 			return true;
 		}
-		return false;
+		if (new_time == null) {
+			this.Times.getTimes().add(new_time);
+			return true;
+		} else {
+			if (this.Times.getTimes().contains(old_time)) {
+				this.Times.getTimes().remove(old_time);
+				this.Times.getTimes().add(new_time);
+				return true;
+			}
+			return false;
+		}
 	}
 
 	public String getMovieDetails2(List<Movie> movie_list) {
@@ -140,6 +158,14 @@ public class Movie {
 			myStr = myStr + "\n";
 		}
 		return myStr;
+	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 
 }
