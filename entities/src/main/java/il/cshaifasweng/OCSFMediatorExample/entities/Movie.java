@@ -25,6 +25,7 @@ public class Movie implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	// @Column(name = "My_Movies_id")
+
 	private int id;
 	private String EngName;
 	private String HebName;
@@ -39,7 +40,6 @@ public class Movie implements Serializable {
 	@OneToOne()
 	@JoinColumn(name = "MovieTimes_id")
 	private MovieTimes Times;
-
 	private byte[] image;
 
 	public Movie() {
@@ -48,6 +48,7 @@ public class Movie implements Serializable {
 
 	public Movie(String EngName, List<String> actors, int len, String HebName, String summary, String producer,
 			int price, MovieTimes times) {
+		super();
 		this.EngName = EngName;
 		this.Length = len;
 		this.ActorsNames = actors;

@@ -13,11 +13,10 @@
       <VBox prefHeight="200.0" prefWidth="100.0" />
       <AnchorPane layoutX="7.0" layoutY="4.0" prefHeight="527.0" prefWidth="643.0" style="-fx-background-color: #730606;">
          <children>
-            <TableView layoutX="-9.0" layoutY="82.0" prefHeight="445.0" prefWidth="541.0">
+            <TableView fx:id="tableView" layoutX="-9.0" layoutY="82.0" prefHeight="445.0" prefWidth="541.0">
               <columns>
-                <TableColumn prefWidth="174.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Movie name" />
-                  <TableColumn prefWidth="120.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Price" />
-                  <TableColumn prefWidth="246.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Image" />
+                <TableColumn fx:id="firstNameColumn" prefWidth="174.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Movie name" />
+                  <TableColumn fx:id="branchColumn" prefWidth="120.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Price" />
               </columns>
             </TableView>
             <Button fx:id="Go_back" layoutX="542.0" layoutY="477.0" mnemonicParsing="false" onAction="#gobacktoprimary" prefHeight="28.0" prefWidth="92.0" style="-fx-background-radius: 40; -fx-background-color: #f8e9bb;" text="Go_back" />
